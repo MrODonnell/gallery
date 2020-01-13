@@ -12,25 +12,22 @@
 // slightly modified by J. ODonnell
 // Jan. 9, 2020
 var revert = new Array();
-var inames = new Array('first', 'second');
+var inames = new Array('airport', 'nest', 'paul', 'puzzle', 'rpi', 'table', 'tree');
 
 // Preload
 if (document.images) {
   var flipped = new Array();
   for(i=0; i< inames.length; i++) {
     flipped[i] = new Image();
-    flipped[i].src = "picts/"+inames[i]+"2.gif";
+    flipped[i].src = "picts/"+inames[i]+".jpg";
   }
 }
 
 function over(num) {
   if(document.images) {
-    revert[num] = document.images[inames[num]].src;
-    document.images[inames[num]].src = flipped[num].src;
-  }
-}
-function out(num) {
-  if(document.images) document.images[inames[num]].src = revert[num];
+	x = "<img src= 'picts/" + inames[num] + ".jpg' width='450px'>";
+	document.getElementById("bigDiv").innerHTML = x;
+	}
 }
 </script>
 </head>
@@ -42,8 +39,17 @@ function out(num) {
 
 
 <section>
-<img src="picts/first1.gif" name="first" onMouseOver="over(0)" onMouseOut="out(0)">
-<img src="picts/second1.gif" name="second" onMouseOver="over(1)" onMouseOut="out(1)">
+<img src="picts/sm_airport.jpg" name="first" onClick="over(0)">
+<img src="picts/sm_nest.jpg" name="second" onClick="over(1)">
+<img src="picts/sm_paul.jpg" name="third" onClick="over(2)">
+<img src="picts/sm_puzzle.jpg" name="fourth" onClick="over(3)">
+<img src="picts/sm_rpi.jpg" name="fifth" onClick="over(4)">
+<img src="picts/sm_table.jpg" name="sixth" onClick="over(5)">
+<img src="picts/sm_tree.jpg" name="seventh" onClick="over(6)">
+<br>
+<div id='bigDiv'>
+<img src="picts/tree.jpg">
+</div>
 </section>
 <footer>
   <p>&copy; 2019 J. ODonnell. All rights reserved.</p>
