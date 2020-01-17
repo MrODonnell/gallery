@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rollover</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+// this code was lifted from https://www.yourhtmlsource.com/images/rollovers.html
+// slightly modified by J. ODonnell
+// Jan. 9, 2020
+
+$(document).ready(function(){
+  $(".smallPict").click(function(){
+	var newpict = 'picts/' + $(this).attr("name") + '.jpg';
+	$("#bigPictID").fadeOut(600, function(){
+		$(this).attr('src', newpict).fadeIn(600);
+	});
+  });
+});
+
+</script>
+</head>
+<body>
+
+<header>
+  <h1>Monday Times</h1>
+</header>
+
+
+<section>
+<img src="picts/sm_airport.jpg" class='smallPict' name="airport">
+<img src="picts/sm_nest.jpg"  class='smallPict' name="nest">
+<img src="picts/sm_paul.jpg" class='smallPict' name="paul">
+<img src="picts/sm_puzzle.jpg" class='smallPict' name="puzzle">
+<img src="picts/sm_rpi.jpg" class='smallPict' name="rpi">
+<img src="picts/sm_table.jpg" class='smallPict' name="table">
+<img src="picts/sm_tree.jpg" class='smallPict' name="tree">
+<br>
+
+<img src="picts/tree.jpg" name="bigPict" id="bigPictID">
+
+</section>
+<footer>
+  <p>&copy; 2019 J. ODonnell. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -4,9 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>rollover</title>
-<style>
-
-</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
 // this code was lifted from https://www.yourhtmlsource.com/images/rollovers.html
 // slightly modified by J. ODonnell
@@ -29,6 +27,7 @@ function over(num) {
 	document.getElementById("bigDiv").innerHTML = x;
 	}
 }
+
 </script>
 </head>
 <body>
@@ -39,13 +38,13 @@ function over(num) {
 
 
 <section>
-<img src="picts/sm_airport.jpg" name="first" onClick="over(0)">
-<img src="picts/sm_nest.jpg" name="second" onClick="over(1)">
-<img src="picts/sm_paul.jpg" name="third" onClick="over(2)">
-<img src="picts/sm_puzzle.jpg" name="fourth" onClick="over(3)">
-<img src="picts/sm_rpi.jpg" name="fifth" onClick="over(4)">
-<img src="picts/sm_table.jpg" name="sixth" onClick="over(5)">
-<img src="picts/sm_tree.jpg" name="seventh" onClick="over(6)">
+<img src="picts/sm_airport.jpg" class='smallPict' name="first" onClick="over(0)">
+<img src="picts/sm_nest.jpg"  class='smallPict' name="second" onClick="over(1)">
+<img src="picts/sm_paul.jpg" class='smallPict' name="third" onClick="over(2)">
+<img src="picts/sm_puzzle.jpg" class='smallPict' name="fourth" onClick="over(3)">
+<img src="picts/sm_rpi.jpg" class='smallPict' name="fifth" onClick="over(4)">
+<img src="picts/sm_table.jpg" class='smallPict' name="sixth" onClick="over(5)">
+<img src="picts/sm_tree.jpg" class='smallPict' name="seventh" onClick="over(6)">
 <br>
 <div id='bigDiv'>
 <img src="picts/tree.jpg">

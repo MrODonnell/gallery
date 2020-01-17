@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rollover</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+// this code was lifted from https://www.yourhtmlsource.com/images/rollovers.html
+// slightly modified by J. ODonnell
+// Jan. 9, 2020
+var revert = new Array();
+var inames = new Array('airport', 'nest', 'paul', 'puzzle', 'rpi', 'table', 'tree');
+
+// Preload
+if (document.images) {
+  var flipped = new Array();
+  for(i=0; i< inames.length; i++) {
+    flipped[i] = new Image();
+    flipped[i].src = "picts/"+inames[i]+".jpg";
+  }
+}
+$(document).ready(function(){
+  $(".smallPict").click(function(){
+	alert($(this).attr('name'));
+	newpict = 'picts/' + $(this).attr("name") + '.jpg';
+	//$("#bigPictID").src() = 'picts/paul.jpg';
+	//$("#bigPictID").fadeOut();
+	//$("#bigDiv").fadeOut();
+	
+	//$("#bigPictID").attr('src') = flipped[3];
+	//$("#bigPictID").src() = flipped[3];
+	//var num = 3;
+	//x = "<img src= 'picts/" + inames[num] + ".jpg' width='450px'>";
+	//document.getElementById("bigDiv").innerHTML = x;
+	$("#bigPictID").fadeOut(600, function(){
+		//var pictureLocation = 'picts/' + $(this).attr("name") + '.jpg';
+		$(this).attr('src', 'picts/' + $(this).attr("name") + '.jpg').fadeIn(600);
+	});
+	//$("#bigDiv").fadeIn();
+  });
+});
+
+</script>
+</head>
+<body>
+
+<header>
+  <h1>Monday Times</h1>
+</header>
+
+
+<section>
+<img src="picts/sm_airport.jpg" class='smallPict' name="airport" onClick="over(0)">
+<img src="picts/sm_nest.jpg"  class='smallPict' name="nest" onClick="over(1)">
+<img src="picts/sm_paul.jpg" class='smallPict' name="paul" onClick="over(2)">
+<img src="picts/sm_puzzle.jpg" class='smallPict' name="puzzle" onClick="over(3)">
+<img src="picts/sm_rpi.jpg" class='smallPict' name="rpi" onClick="over(4)">
+<img src="picts/sm_table.jpg" class='smallPict' name="table" onClick="over(5)">
+<img src="picts/sm_tree.jpg" class='smallPict' name="tree" onClick="over(6)">
+<br>
+<div id='bigDiv'>
+<img src="picts/tree.jpg" name="bigPict" id="bigPictID">
+</div>
+</section>
+<footer>
+  <p>&copy; 2019 J. ODonnell. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
